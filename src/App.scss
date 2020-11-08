@@ -1,0 +1,3898 @@
+* {
+  box-sizing: border-box;
+}
+
+* {
+	margin: 0; padding: 0;
+}
+
+body{
+  display: block;
+  margin: auto;
+  height: 100%;
+}
+
+.normInt{
+  color: black;
+  display: inline-block;
+
+}
+
+.redIntDown{
+  color: red;
+  display: inline-block;
+  animation: rotate-down 0.5s;
+
+}
+
+.greenIntUp{
+  color: green;
+  display: inline-block;
+  animation: rotate-up 0.5s;
+
+}
+
+.redIntUp{
+  color: red;
+  display: inline-block;
+animation: rotate-up 0.5s;
+}
+
+@keyframes rotate-up {
+  0%{
+    transform: translateY(-50px);
+    opacity: 1;
+  } 50% {
+    opacity: 0;
+    transform: translateY(50px);
+  }100%{
+    transform: translateY(0px);
+     opacity: 1;
+  }
+}
+
+.greenIntDown{
+  color: green;
+  display: inline-block;
+  animation: rotate-down 0.5s;
+}
+
+@keyframes rotate-down {
+  0%{
+    transform: translateY(50px);
+    opacity: 1;
+  } 50% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }100%{
+       transform: translateY(0px);
+       opacity: 1;
+     }
+}
+
+.instructionModalBackground{
+  z-index: 1000;
+  position: fixed;
+  bottom: 0%;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  background: rgb(0, 0, 0);
+  opacity: 0.8;
+  filter: Alpha(Opacity=50);
+  animation: fade-in-modal-back 0.6s;
+}
+
+@keyframes fade-in-modal-back {
+  0% {
+    opacity: 0;
+  } 100%{
+    opacity: 0.8;
+  }
+}
+
+.instructionContainer{
+  animation: slide-intro 0.5s;
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  z-index: 1000;
+}
+
+.intContainer{
+  height: 30px;
+    overflow-y: hidden;
+    position: relative;
+    text-align: center;
+    width: 30px;
+    display: inline-block;
+    margin: auto;
+}
+
+numContainer{
+  width: 25%;
+  display: inline-block;
+  margin: auto;
+  position: absolute;
+}
+
+@keyframes slide-intro {
+  0% {
+    transform: translateX(-300px);
+  } 100%{
+    transform: translateX(0px);
+  }
+}
+
+.balloonBuddy{
+  cursor: pointer;
+  width: 200px;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+.balloonLightLogo{
+  width: 100px;
+  cursor: pointer;
+
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+canvas {
+	display: block;
+
+		width: 100%;
+	height: 100%;
+  position:absolute;
+}
+
+.nav{
+  display: block;
+  margin: auto;
+  max-width:2000px;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.spinNum{
+  display: inline-block;
+  transform: rotateX(0deg);
+}
+
+.spinNumTurnUp {
+  display: inline-block;
+  animation: turn-num-up 0.5s;
+}
+
+.spinNumTurnDown {
+  display: inline-block;
+  animation: turn-num-down 0.5s;
+}
+
+@keyframes turn-num-up {
+  0%{transform: rotateX(360deg);color: green;} 100%{transform: rotateX(0deg);color: black;}
+}
+
+@keyframes turn-num-down {
+  0%{
+    transform: rotateX(0deg);
+    color: red;
+  } 100%{
+    transform: rotateX(360deg);
+    color: black;
+  }
+}
+
+.drop-link{
+  text-decoration: none;
+  cursor: pointer !important;
+}
+
+.speech-bubble {
+	position: relative;
+	background-color: #FFFFFF;
+	border-radius: 200px;
+  height:300px;
+  width: 400px;
+}
+
+.speech-bubble p {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  display: block;
+  margin: auto;
+  width: 300px;
+  font-size: 30px;
+}
+
+.bubbleContainer{
+  z-index: 1000;
+  position: fixed;
+  bottom: 240px;
+  left: 120px;
+  animation: scale-thought-bubble 0.5s;
+}
+
+@keyframes scale-thought-bubble {
+  0% {
+    transform: scale(0);
+  } 100%{
+    transform: scale(0);
+  } 20%{
+    transform: scale(0.5);
+  } 30%{
+    transform: scale(0.7);
+  } 40%{
+    transform: scale(0.9);
+  } 50%{
+    transform: scale(1.1);
+  } 60%{
+    transform: scale(0.9);
+  } 70%{
+    transform: scale(0.7);
+  }80%{
+    transform: scale(0.9);
+  }90%{
+    transform: scale(1.1);
+  }100%{
+    transform: scale(1);
+  }
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 10px;
+	left: 110px;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: #008080;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -10px;
+	margin-bottom: -20px;
+}
+
+.nav-link, .nav-link-lower{
+  z-index: 999;
+  text-decoration: none;
+  color: black;
+  list-style: none;
+}
+
+.nav-link-container{
+  width: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -25px;
+}
+
+.first-nav-div{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link{
+
+}
+
+.nav-link-h1{
+  font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.nav-link-lower{
+  font-size: 20px;
+  margin-left: 25px;
+}
+
+.wordDiv{
+  display: block;
+  margin: auto;
+  width: 200px;
+  border: solid 1px black;
+  border-top: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.letter{
+  color: white;
+  -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+   display: inline-block;
+   font-size: 30px;
+}
+
+.letter.found{
+  color: gold;
+}
+
+@keyframes square {
+  @for $i from 1 through 41 {
+    #{($i * 2%)} {
+      transform: translateY((-200px));
+    }
+  }
+}
+
+.innerBalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  perspective: 3000px;
+
+}
+
+.balPar{
+  position: absolute;
+  top: -200px;
+}
+
+.App {
+  background-color: #008080;
+  text-align: center;
+  display: block;
+  margin:auto;
+}
+
+
+.Maths {
+  text-align: center;
+  display: block;
+  margin:auto;
+}
+
+.parentBalContainer{
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.balContainer{
+  display: block;
+  margin: auto;
+  cursor: crosshair;
+  height: 500px;
+  width: 80%;
+  border: solid 1px black;
+  overflow: hidden;
+  position: relative;
+  max-width: 1500px;
+}
+
+.innerBalContainer{
+  position: relative;
+  animation: balloon-rise 6s ease-in-out;
+}
+
+.spanDiv{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+
+}
+
+/* -------------------- UNIVERSAL BALLOON STYLES -------------------- */
+
+.redBalloon, .blueBalloon, .greenBalloon, .indigoBalloon, .orangeBalloon, .violetBalloon, .yellowBalloon, .blackBalloon {
+  width:55px;
+  height:64px;
+  text-align: center;
+  border-radius:0;
+  border-radius:80% 80% 80% 80%;
+  margin: 0 auto;
+  position: absolute;
+  padding:10px;
+  -webkit-transform-origin: bottom center;
+  animation: balloon-bounce 6s ease-in-out infinite;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+   border: solid 1px black;
+   bottom: -50px;
+}
+
+/* -------------------- RED BALLOON STYLES -------------------- */
+
+.redBalloon{
+  background-color: #ff6961;
+  box-shadow:inset 17px 7px 10px #ff6961;
+}
+
+.redBalloon:before {
+  color:#ff6961;
+  position:absolute;
+  bottom:-14px;
+  left: 20px;
+  content:"▲";
+  font-size:1em;
+}
+
+/* -------------------- ORANGE BALLOON STYLES -------------------- */
+
+.orangeBalloon{
+  background-color: #ffb347;
+  box-shadow:inset 17px 7px 10px #ffb347;
+}
+
+.orangeBalloon:before {
+  color:#ffb347;
+  position:absolute;
+  bottom:-14px;
+  left: 20px;
+  content:"▲";
+  font-size:1em;
+}
+
+/* -------------------- YELLOW BALLOON STYLES -------------------- */
+
+.yellowBalloon{
+  background-color: #fdfd96;
+  box-shadow:inset 17px 7px 10px #fdfd96;
+}
+
+.yellowBalloon:before {
+  color:#fdfd96;
+  position:absolute;
+  bottom:-14px;
+  left: 20px;
+  content:"▲";
+  font-size:1em;
+}
+
+
+/* -------------------- GREEN BALLOON STYLES -------------------- */
+
+.greenBalloon{
+  background-color: #77dd77;
+  box-shadow:inset 17px 7px 10px #77dd77;
+}
+
+.greenBalloon:before {
+  color:#77dd77;
+  position:absolute;
+  bottom:-14px;
+  left: 20px;
+  content:"▲";
+  font-size:1em;
+}
+
+
+/* -------------------- BLUE BALLOON STYLES -------------------- */
+
+.blueBalloon{
+  background-color: #6384e6;
+  box-shadow:inset 17px 7px 10px #6384e6;
+}
+
+.blueBalloon:before {
+  color:#6384e6;
+  position:absolute;
+  bottom:-14px;
+  left: 20px;
+  content:"▲";
+  font-size:1em;
+}
+
+
+/* -------------------- INDIGO BALLOON STYLES -------------------- */
+
+.indigoBalloon{
+  background-color: #c620ff;
+  box-shadow:inset 17px 7px 10px #c620ff;
+}
+
+.indigoBalloon:before {
+  color:#c620ff;
+  position:absolute;
+  bottom:-14px;
+  left: 20px;
+  content:"▲";
+  font-size:1em;
+}
+
+/* -------------------- VIOLET BALLOON STYLES -------------------- */
+
+.violetBalloon{
+  background-color: #cb99c9;
+  box-shadow:inset 17px 7px 10px #cb99c9;
+}
+
+.violetBalloon:before {
+  color:#cb99c9;
+  position:absolute;
+  bottom:-14px;
+  left: 20px;
+  content:"▲";
+  font-size:1em;
+}
+
+/* -------------------- BLACK BALLOON STYLES -------------------- */
+
+.blackBalloon{
+  background-color: black;
+  box-shadow:inset 17px 7px 10px black;
+  color: white !important;
+}
+
+.blackBalloon:before {
+  color:black;
+  position:absolute;
+  bottom:-14px;
+  content:"▲";
+  font-size:1em;
+}
+
+/*-----------------END INDIVIDUAL BALLOON STYLES---------------*/
+
+@keyframes balloon-bounce{
+  0%,100%{ -webkit-transform:translateY(0) rotate(-6deg);}
+  50%{ -webkit-transform:translateY(-20px) rotate(8deg);}
+}
+
+@keyframes balloon-bounce-blue{
+  0%,100%{ -webkit-transform:translateY(-16deg) rotate(0deg);}
+  50%{ -webkit-transform:translateY(-20px) rotate(-15deg);}
+}
+
+@keyframes balloon-bounce-green{
+  0%,100%{ -webkit-transform:translateY(-6deg) rotate(0deg);}
+  50%{ -webkit-transform:translateY(-20px) rotate(8deg);}
+}
+
+@keyframes balloon-rise{
+  0%{
+    -webkit-transform:translateY(2000px);
+  } 100%{
+    -webkit-transform:translateY(0%);
+  }
+}
+
+.balTotal{
+  height: 45px;
+overflow-y: hidden;
+display: block;
+margin: auto;
+min-width: 50px;
+font-size: 30px;
+padding: 20px;
+padding-top: 15px;
+text-align: center;
+}
+
+.balSpanOp {
+  // display: inline-block;
+  // -webkit-text-stroke-width: 1px;
+  //  -webkit-text-stroke-color: black;
+   font-size: 20px;
+  font-weight: 800;
+  // position: absolute;
+  // top: 40%;
+  // margin-left: -25px;
+}
+
+.balSpanNum {
+  // display: inline-block;
+  // -webkit-text-stroke-width: 1px;
+  //  -webkit-text-stroke-color: black;
+   font-size: 20px;
+  // position: absolute;
+  // top: 40%;
+    font-weight: 800;
+}
+
+.startBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  padding: 10px;
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  color: white;
+  background-color: green;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: -10px;
+}
+
+.startBtn.green{
+  background-color: green;
+  box-shadow:inset 17px 7px 10px green;
+}
+
+.startBtn.green:before {
+  color:green;
+  position:absolute;
+  top:65px;
+  content:"▲";
+  font-size:1em;
+}
+
+.startBtn.red{
+  background-color: red;
+  box-shadow:inset 17px 7px 10px red;
+}
+
+.startBtn.red:before {
+  color:red;
+  position:absolute;
+  top:65px;
+  content:"▲";
+  font-size:1em;
+}
+
+.headContainer{
+      width: 100%;
+  position: absolute;
+  flex-grow: 1;
+}
+
+.timer{
+  background-color: Transparent;
+  width: 200px;
+  position: absolute;
+  left: -55px;
+    top: -50px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+  color: black;
+  outline: none;
+}
+
+button.pulsate {
+  background-color: Transparent;
+  border: none;
+  // padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 25px;
+  // background: #2A4B8D;
+}
+
+/* Ripple magic */
+button.pulsate{
+  // position: relative;
+  // overflow: hidden;
+}
+
+button.pulsate:focus{
+  background-color: Transparent;
+  text-decoration: none;
+  outline: none;
+}
+
+button.pulsate:after {
+  background-color: Transparent;
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 50%;
+  height: 50%;
+  background: rgba(51, 102, 204, 0.9);
+  opacity: 0;
+  border-radius: 100%;
+  transform-origin: 50% 50%;
+
+}
+
+@keyframes ripple {
+  0%, 35% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(4);
+  }
+}
+
+button.pulsate::after {
+  animation: ripple 1s ease-out;
+    color: white;
+}
+
+.lostBal{
+  width: 800px;
+  height: 800px;
+  position: fixed;
+  bottom: 5%;
+  left: 15%;
+  background-color: black;
+  z-index: 100;
+  text-align: center;
+  border-radius:0;
+  border-radius:80% 80% 80% 80%;
+  margin: 0 auto;
+  padding:10px;
+  -webkit-transform-origin: bottom center;
+  animation: balloon-bounce 6s ease-in-out infinite;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+   border: solid 1px black;
+   display: flex;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.lostBal{
+  box-shadow:inset 17px 7px 10px black;
+}
+
+.lostBal:before {
+  color:black;
+  position:absolute;
+  bottom:-35px;
+  content:"▲";
+  font-size:45px !important;
+  transform-origin : 50% 100%;
+}
+
+.lostBalContainer{
+  width: 80%;
+  height: 80%;
+  animation: lost-balloon-explode 3s;
+  position: fixed;
+  bottom: 1%;
+  left: 3%;
+  z-index: 100;
+}
+
+.finalDataContainer{
+  width: 100%;
+  color: white;
+  display: 'block';
+  margin: auto;
+  text-align: center;
+  -webkit-text-stroke-width: 0px;
+   -webkit-text-stroke-color: black;
+}
+
+@keyframes lost-balloon-explode {
+  0%{
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.finalPlayAgain{
+  background-color: green;
+  border-radius: 10px;
+  border: solid 1px white;
+  padding: 20px;
+  width: 150px;
+  cursor: pointer;
+  -webkit-text-stroke-width: 0px;
+   -webkit-text-stroke-color: black;
+   display: block;
+   margin: auto;
+   margin-top: 100px;
+}
+
+.landingContainer{
+  background-color: #008080;
+  position: fixed;
+  top: 100px;
+  bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.landingBal{
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width:150px;
+  height:150px;
+  text-align: center;
+  border-radius:0;
+  border-radius:80% 80% 80% 80%;
+  margin: 10px;
+  padding:10px;
+  -webkit-transform-origin: bottom center;
+  animation: balloon-bounce 6s ease-in-out infinite;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+   border: solid 1px black;
+   bottom: -50px;
+}
+
+.landingBal-h1-container{
+  width: 100px;
+  display: block;
+  marign: auto;
+  // align-items: center;
+  // justify-content: center;
+
+}
+
+.landingBal h1{
+text-align: center;
+display: block;
+margin: auto;
+font-size: 50px;
+
+}
+
+.svg-inline--fa{
+  -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black;
+}
+
+.landingBal.red{
+  background-color: #ff6961;
+  box-shadow:inset 17px 7px 10px #ff6961;
+}
+
+.landingBal.red:before {
+  color:#ff6961;
+  position:absolute;
+  bottom:-14px;
+  content:"▲";
+  font-size:1em;
+}
+
+.landingBal.blue{
+  background-color: #6384e6;
+  box-shadow:inset 17px 7px 10px #6384e6;
+  -webkit-transform-origin: bottom center;
+  animation: balloon-bounce-blue 6s ease-in-out infinite;
+}
+
+.landingBal.blue:before {
+  color:#6384e6;
+  position:absolute;
+  bottom:-14px;
+  content:"▲";
+  font-size:1em;
+}
+
+.landingBal.green{
+  background-color: #77dd77;
+  box-shadow:inset 17px 7px 10px #77dd77;
+  -webkit-transform-origin: bottom center;
+  animation: balloon-bounce-green 6s ease-in-out infinite;
+}
+
+.landingBal.green:before {
+  color:#77dd77;
+  position:absolute;
+  bottom:-14px;
+  content:"▲";
+  font-size:1em;
+}
+
+// ******************************** MEDIA QUERIES *********************************
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+
+    .balContainer{
+      height: 400px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+
+    .balContainer{
+      height: 400px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .balContainer{
+      height: 400px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .balContainer{
+      height: 400px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .timer{
+      position: absolute;
+    }
+    .balContainer{
+      height: 350px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .balContainer{
+      height: 350px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .balContainer{
+      height: 400px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .balContainer{
+      height: 400px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .balContainer{
+      height: 400px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .balContainer{
+      height: 400px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .nav-link-h1{
+      display: none !important;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- Galaxy S3 ----------- */
+
+/* Portrait and Landscape */
+@media screen
+  and (device-width: 320px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 2) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Portrait */
+@media screen
+  and (device-width: 320px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Landscape */
+@media screen
+  and (device-width: 320px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* ----------- Galaxy S4, S5 and Note 3 ----------- */
+
+/* Portrait and Landscape */
+@media screen
+  and (device-width: 320px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Portrait */
+@media screen
+  and (device-width: 320px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Landscape */
+@media screen
+  and (device-width: 320px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+
+
+}
+
+/* ----------- Galaxy S6 ----------- */
+
+/* Portrait and Landscape */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 4) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+}
+
+/* Portrait */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 4)
+  and (orientation: portrait) {
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Landscape */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 4)
+  and (orientation: landscape) {
+
+
+}
+
+/* ----------- Google Pixel ----------- */
+
+/* Portrait and Landscape */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Portrait */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Landscape */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- Google Pixel XL ----------- */
+
+/* Portrait and Landscape */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 4) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Portrait */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 4)
+  and (orientation: portrait) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+}
+
+/* Landscape */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 4)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- HTC One ----------- */
+
+/* Portrait and Landscape */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Portrait */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Landscape */
+@media screen
+  and (device-width: 360px)
+  and (device-height: 640px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- Windows Phone ----------- */
+
+/* Portrait and Landscape */
+@media screen
+  and (device-width: 480px)
+  and (device-height: 800px) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Portrait */
+@media screen
+  and (device-width: 480px)
+  and (device-height: 800px)
+  and (orientation: portrait) {
+
+    .headContainer{
+      width: 100%;
+    right: 0px;
+    }
+
+    .balloonBuddy{
+      width: 150px;
+      z-index: 1000;
+    }
+    .first-nav-div{
+      float: left;
+    }
+    .speech-bubble p {
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    display: block;
+    margin: auto;
+    width: 200px;
+    font-size: 20px;
+}
+    .speech-bubble {
+    	position: relative;
+    	background-color: #FFFFFF;
+    	border-radius: 100px;
+      height:200px;
+      width: 250px;
+
+    }
+
+    .bubbleContainer{
+      z-index: 1000;
+      position: fixed;
+      bottom: 220px;
+      left: 10%;
+    }
+
+    .speech-bubble:after {
+    	content: '';
+    	position: absolute;
+    	bottom: 2px;
+    	left: 100px;
+    	width: 0;
+    	height: 0;
+    	border: 20px solid transparent;
+    	border-top-color: #FFFFFF;
+    	border-bottom: 0;
+    	border-left: 0;
+    	margin-left: -10px;
+    	margin-bottom: -20px;
+    }
+    .nav-link-container{visibility: hidden}
+    .balloonLightLogo {
+      width: 50px;
+      margin-left: 20px;
+      margin-top: -15px;
+    }
+    .startBtn {
+      margin-right: 20px;
+    }
+    .lostBal{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      bottom: 20%;
+      left: 5%;
+    }
+    .lostBalContainer{
+      bottom: 20%;
+      left: 5%;
+    }
+    .landingContainer {
+      position: relative;
+      top: 30px;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin: auto;
+    }
+    .finalPlayAgain{
+      background-color: green;
+      border-radius: 10px;
+      border: solid 1px white;
+      padding: 5px;
+      width: 120px;
+      cursor: pointer;
+      -webkit-text-stroke-width: 0px;
+       -webkit-text-stroke-color: black;
+       display: block;
+       margin: auto;
+       margin-top: 10px;
+    }
+    @keyframes lost-balloon-explode {
+      0%{
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+}
+
+/* Landscape */
+@media screen
+  and (device-width: 480px)
+  and (device-height: 800px)
+  and (orientation: landscape) {
+
+}
